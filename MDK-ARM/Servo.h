@@ -10,6 +10,7 @@ private:
 	double highTime;
 	GPIO_TypeDef *GPIOx;
 	uint16_t GPIO_Pin;
+
 public:
     Servo();
     Servo(GPIO_TypeDef *_GPIOx, uint16_t _GPIO_Pin, int _id, int _offset);

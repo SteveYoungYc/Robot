@@ -5,6 +5,7 @@ Servo::Servo(GPIO_TypeDef *_GPIOx, uint16_t _GPIO_Pin, int _id, int _offset) {
 	GPIO_Pin = _GPIO_Pin;
     id = _id;
 	offset = _offset;
+	highTime = 0.0;
 }
 
 void Servo::setID(int _id) {
@@ -16,7 +17,7 @@ void Servo::setAngle(int _angle) {
 		return;
 	}
 	angle = _angle - offset;
-	highTime = angle / 1.8 + 25;
+	highTime = angle / 9.0 + 5.0;
 }
 
 void Servo::exe() {

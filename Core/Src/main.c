@@ -59,7 +59,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 uint8_t offset[52] = "+05-10";
 uint8_t buffer[52];
-int offset_int[17];
+int offset_int[17] = {9, 0, 9, -9, 0, 0, -18, 18};
 
 //uint8_t aTxStartMessages[6] = "12345";
 //uint8_t aRxBuffer[6];
@@ -102,6 +102,7 @@ int main(void)
 	BSP_W25Qx_Init();
 	// BSP_W25Qx_Write(offset, W25Q128FV_FLASH_SIZE-2000, sizeof(offset));
 	HAL_Delay(50);
+	/*
 	BSP_W25Qx_Read(buffer, W25Q128FV_FLASH_SIZE-2000, sizeof(buffer));
 	  //BSP_W25Qx_Write(aTxStartMessages, W25Q128FV_FLASH_SIZE-2000, sizeof(aTxStartMessages));
 	  //HAL_Delay(50);	
@@ -114,6 +115,7 @@ int main(void)
 			offset_int[i / 3] = -(buffer[i + 1] - '0') * 10 - buffer[i + 2] - '0';
 		}
 	  }
+	  */
   /* USER CODE END 2 */
 
   /* Infinite loop */

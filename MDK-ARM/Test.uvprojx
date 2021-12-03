@@ -398,16 +398,6 @@
               <FilePath>.\Servo.cpp</FilePath>
             </File>
             <File>
-              <FileName>Servo.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Servo.h</FilePath>
-            </File>
-            <File>
-              <FileName>Timer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Timer.h</FilePath>
-            </File>
-            <File>
               <FileName>Timer.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\Timer.cpp</FilePath>
@@ -418,19 +408,9 @@
               <FilePath>.\W25Qxx.c</FilePath>
             </File>
             <File>
-              <FileName>W25Qxx.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\W25Qxx.h</FilePath>
-            </File>
-            <File>
               <FileName>Servos.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\Servos.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Servos.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Servos.h</FilePath>
             </File>
             <File>
               <FileName>main.c</FileName>
