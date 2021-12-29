@@ -30,6 +30,7 @@ test\timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h
 test\timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 test\timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 test\timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+test\timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 test\timer.o: ../Core/Inc/rtc.h
 test\timer.o: ../Core/Inc/tim.h
 test\timer.o: ../Core/Inc/gpio.h
@@ -37,3 +38,4 @@ test\timer.o: Timer.h
 test\timer.o: Servo.h
 test\timer.o: Timer.h
 test\timer.o: W25Qxx.h
+test\timer.o: ../Core/Inc/usart.h

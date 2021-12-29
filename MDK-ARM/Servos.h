@@ -3,7 +3,7 @@
 #include "W25Qxx.h"
 #include "Servo.h"
 
-class Servos {
+class Uart {
 private:
 	Servo servos[17];
 public:

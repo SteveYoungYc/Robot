@@ -19,14 +19,17 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "rtc.h"
 #include "spi.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "W25Qxx.h"
+#include "Timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,8 +62,9 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 uint8_t offset[52] = "+05-10";
 uint8_t buffer[52];
-int offset_int[17];
-
+int offset_int[17] = {9, 0, 9, -9, 0, 0, -18, 18};
+uint8_t uart_buffer[100];
+uint8_t recvTemp;
 //uint8_t aTxStartMessages[6] = "12345";
 //uint8_t aRxBuffer[6];
 /* USER CODE END 0 */
@@ -97,10 +101,16 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_SPI1_Init();
+  MX_DMA_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
+  //HAL_UART_Receive_DMA(&huart3, &recvTemp, 1);
+  HAL_UART_Receive_DMA(&huart3, uart_buffer, 1);
 	HAL_TIM_Base_Start_IT(&htim2);
 	BSP_W25Qx_Init();
+	servo_init();
 	// BSP_W25Qx_Write(offset, W25Q128FV_FLASH_SIZE-2000, sizeof(offset));
+	/*
 	HAL_Delay(50);
 	BSP_W25Qx_Read(buffer, W25Q128FV_FLASH_SIZE-2000, sizeof(buffer));
 	  //BSP_W25Qx_Write(aTxStartMessages, W25Q128FV_FLASH_SIZE-2000, sizeof(aTxStartMessages));
@@ -113,7 +123,7 @@ int main(void)
 		else if(buffer[i] == '-') {
 			offset_int[i / 3] = -(buffer[i + 1] - '0') * 10 - buffer[i + 2] - '0';
 		}
-	  }
+	  }*/
   /* USER CODE END 2 */
 
   /* Infinite loop */
